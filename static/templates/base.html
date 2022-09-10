@@ -7,9 +7,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <title>HOME</title>
+    
+    {% block styles %}
+        
+    {% endblock styles %}
+        
 
 </head>
 <body>
+    <nav>
+        <img src="{% static 'images/logo.png' %}" alt="">
+        <ul>
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="{% url 'details' %}">All URL</a></li>
+            <li><a href="">Details</a></li>
+            <li><a href="">---</a></li>
+        </ul>
+    </nav>
     
     {% block content %}
         Document
