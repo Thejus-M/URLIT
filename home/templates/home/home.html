@@ -6,13 +6,22 @@
 {% endblock styles %}
 
 {% block content %}
+{% if request.path == '/projects' %} class="active" {% endif %}
+{% if request.path == '/' %}
 
-{% for user in urls %}
-<div class="urls">
-    <h1>{{ user.name }}</h1>
-    <h2>{{ user.url }}</h2>
-    <h2>{{ user.url.short_code }}</h2>
+<li><a href="{% url 'shorten-url' %}">ADD link</a></li>
+<img src="{% static 'images/urlitfull.png' %}" alt="">
+    
+{% endif %}
+<div class="all_cards">
+    {% for user in urls %}
+    <div class="urls">
+        <h1>{{ user.name }}</h1>
+        <h2>{{ user.url }}</h2>
+        <h2>{{ user.url.short_code }}</h2>
+    </div>
+    {% endfor %}
 </div>
-{% endfor %}
+
 HOME
 {% endblock content %}

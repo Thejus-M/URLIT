@@ -39,5 +39,8 @@ class UserData(models.Model):
         verbose_name = "UserData"
         verbose_name_plural = "UserData Details"
 
+    def url_link(self):
+        return self.url.url_link
+    
     def __str__(self):
         return self.name.username
