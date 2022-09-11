@@ -15,11 +15,15 @@
 {% endif %}
 <div class="all_cards">
     {% for user in urls %}
+    o
+    {{ user.url.all }}
+    {% for key in user.url.all %}
     <div class="urls">
         <h1>{{ user.name }}</h1>
-        <h2>{{ user.url }}</h2>
-        <h2>{{ user.url.short_code }}</h2>
+        <h2>{{ key }}</h2>
+        <h2> {{ key.short_code }}</h2>
     </div>
+    {% endfor %}  
     {% endfor %}
 </div>
 

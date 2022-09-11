@@ -10,7 +10,7 @@ class URL(models.Model):
 
     def random_endpoint():
         random_string = ''
-        for _ in range(10):
+        for _ in range(5):
             # Considering only upper and lowercase letters
             random_integer = random.randint(97, 97 + 26 - 1)
             flip_bit = random.randint(0, 1)
@@ -33,7 +33,7 @@ class URL(models.Model):
 class UserData(models.Model):
 
     name = models.ForeignKey(User, on_delete=models.CASCADE)
-    url = models.ForeignKey(URL, on_delete=models.CASCADE)
+    url = models.ManyToManyField(URL)
 
     class Meta:
         verbose_name = "UserData"
