@@ -1,5 +1,4 @@
 from django.contrib import admin
-from .models import URL,UserData
+from .models import URL
 
 admin.site.register(URL)
-admin.site.register(UserData)

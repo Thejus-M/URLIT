@@ -15,17 +15,12 @@
 {% endif %}
 <div class="all_cards">
     {% for user in urls %}
-    o
-    {{ user.url.all }}
-    {% for key in user.url.all %}
     <div class="urls">
         <h1>{{ user.name }}</h1>
-        <h2>{{ key }}</h2>
-        <h2> {{ key.short_code }}</h2>
+        <a href="{{ user.url_link }}"><h2>{{ user.url_link }}</h2></a>
+        <h2><a href="">{{ user.short_code }}</a></h2>
+        <a href="{% url 'delete' user.id %}">DELETE</a>
     </div>
     {% endfor %}  
-    {% endfor %}
 </div>
-
-HOME
 {% endblock content %}

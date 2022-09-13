@@ -30,11 +30,14 @@
                 <li class="right close-ham-menu">
                     <img src="{% static 'images/close-hamburger.png' %}" alt="icon" width="40px">
                 </li> -->
+
+{% if user.is_authenticated %}
                 <li class="right collapse">
                     <a href="{% url 'logout' %}">
                         Logout
                     </a>
                 </li>
+                {% else %}
                 <li class="right collapse ">
                     <a {% if request.path == '/signup/' %} class="active" {% endif %} href="{% url 'signup' %}">
                         Register
@@ -45,11 +48,7 @@
                         Login
                     </a>
                 </li>
-                <li class="right collapse">
-                    <a {% if request.path == '/' %} class="active" {% endif %} href="{% url 'home' %}">
-                        Details
-                    </a>
-                </li>
+                {% endif %}
                 <li class="right collapse">
                     <a {% if request.path == '/details/' %} class="active" {% endif %} href="{% url 'details' %}">
                         All URL
@@ -76,7 +75,11 @@
     </nav>
     
     {% block content %}
-        Document
+    
+    {% if user.is_authenticated %}
+        You are logged in
+    {% endif %}
+        
     {% endblock content %}
         
 </body>
