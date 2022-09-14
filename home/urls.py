@@ -8,8 +8,8 @@ urlpatterns = [
     path('logout/',views.LogoutInterfaceView.as_view(),name='logout'),
     path('signup/',views.SignupCreateView.as_view(),name='signup'),
     path('shorten-url/',views.ShortURLCreateView.as_view(),name='shorten-url'),
-    path('delete/<pk>',views.URLDeleteView.as_view(),name='delete'),
-    path("<slug:slug>", views.Redirecting, name="redirect"),
+    path('delete/<pk>/',views.URLDeleteView.as_view(),name='delete'),
+    path("<slug:slug>/", views.Redirecting, name="redirect"),
     # path('<pk>',views.ShortURLCreateView.as_view(),name='shorten-url'),
     
 ]
