@@ -9,12 +9,7 @@
 
 
 {% if request.path == '/projects' %} class="active" {% endif %}
-{% if request.path == '/' %}
 
-<li><a href="{% url 'shorten-url' %}">ADD link</a></li>
-<img src="{% static 'images/urlitfull.png' %}" alt="">
-
-{% endif %}
 <br><br>
 <div class="center">
     <a href="{% url 'shorten-url' %}"><button class="learn-more">ADD link</button></a>

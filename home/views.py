@@ -9,7 +9,7 @@ import random
 
 
 class HomeView(TemplateView):
-    template_name = "home/home.html"
+    template_name = "home/front_page.html"
 
 
 class UserDataListView(LoginRequiredMixin,ListView):

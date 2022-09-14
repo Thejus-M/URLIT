@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'css/front_page.css' %}">
+{% endblock styles %}
+
+{% block content %}
+<div class="heading">
+    <h1>About</h1>
+</div>
+
+<div class="container">
+    {% if request.path == '/' %}
+    <h3>This is a short-url website where you can get
+        your links shortened. Instead of typing on an
+        overcrowded text box, hit "Add link" and paste
+        your Long url enter and get your short url.
+    </h3>
+    <br>
+    <h3><span>
+        Enjoy this useful tool to shorten your long web addresses
+        and share them with others. Just paste your long web address
+        in the text box, click "Add link" and you're finished!
+    </span></h3>
+
+
+    <h3>
+        Links are always wanted, 
+        a long url like zdzi.com/home/42014592300 is
+        never a good option. Paste it here in your
+        text box and get a short URL of your link faster!
+    </h3>
+
+    <h3><span>
+        The URLIT Shortener allows you to shorten a long
+        URL to only a few characters and saves it for you
+        in your clipboard. You can then share the shortened
+        link with others or paste it into a text field.
+    </span></h3>
+
+
+
+    {% endif %}
+</div>
+
+{% endblock content %}
