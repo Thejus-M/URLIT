@@ -13,9 +13,16 @@
 
 <li><a href="{% url 'shorten-url' %}">ADD link</a></li>
 <img src="{% static 'images/urlitfull.png' %}" alt="">
-    
+
 {% endif %}
-<a href="{% url 'shorten-url' %}"><button class="learn-more">ADD link</button></a>
+<br><br>
+<div class="center">
+    <a href="{% url 'shorten-url' %}"><button class="learn-more">ADD link</button></a>
+</div>
+<br><br>
+<br><br>
+<br><br>
+<br><br>
 <div class="all_cards">
     {% for user in urls %}
     <div class="urls">

@@ -14,7 +14,7 @@
             {{ form.as_p }}
             <button class="learn-more" value="submit">
                 
-                {% if request.path == '/signup/' %}
+                {% if request.path == 'home:signup' %}
                     Register
                 {% else %}
                 LOGIN

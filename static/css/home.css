@@ -1,4 +1,4 @@
-.urls{
+.urls {
     background-color: #d41c00a2;
     border-radius: 30px;
     text-align: center;
@@ -7,9 +7,40 @@
     max-width: 300px;
     text-align: center;
 }
-.all_cards{
-    background-color: black;
+
+.all_cards {
     display: grid;
-    gap: 50px 100px;
-    grid-template-columns: auto auto auto;
+    gap: auto;
+    text-align: center;
+    grid-template-columns: auto auto auto auto;
+}
+
+.center {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    max-width: fit-content;
+}
+
+@media (max-width:1662px) {
+
+    .all_cards {
+        display: grid;
+        grid-template-columns: auto auto auto;
+    }
+}
+@media (max-width:1244px) {
+
+    .all_cards {
+        display: grid;
+        grid-template-columns: auto auto ;
+    }
+}
+@media (max-width:848px) {
+
+    .all_cards {
+        display: grid;
+        grid-template-columns: auto;
+    }
 }
