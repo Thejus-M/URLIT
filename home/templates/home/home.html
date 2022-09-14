@@ -6,6 +6,8 @@
 {% endblock styles %}
 
 {% block content %}
+
+
 {% if request.path == '/projects' %} class="active" {% endif %}
 {% if request.path == '/' %}
 
@@ -13,14 +15,16 @@
 <img src="{% static 'images/urlitfull.png' %}" alt="">
     
 {% endif %}
+<a href="{% url 'shorten-url' %}"><button class="learn-more">ADD link</button></a>
 <div class="all_cards">
     {% for user in urls %}
     <div class="urls">
-        <h1>{{ user.name }}</h1>
         <a href="{{ user.url_link }}"><h2>{{ user.url_link }}</h2></a>
-        <h2><a href="">{{ user.short_code }}</a></h2>
-        <a href="{% url 'delete' user.id %}">DELETE</a>
+        <h2><a href="{% url 'redirect' user.short_code %}">{{ user.short_code }}</a></h2>
+            <a href="{% url 'delete' user.id %}"><button class="learn-more">DELETE</button></a>
     </div>
     {% endfor %}  
 </div>
+
+
 {% endblock content %}

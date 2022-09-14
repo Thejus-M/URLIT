@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from django.views.generic import TemplateView,ListView, CreateView,DeleteView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.views import LoginView, LogoutView
@@ -25,22 +25,29 @@ class UserDataListView(LoginRequiredMixin,ListView):
 
 
 class LoginInterfaceView(LoginView):
-    template_name='home/login.html'
-    
+    template_name = 'home/login.html'
+
+
+
+def Redirecting(request, slug):
+    model = URL
+    link = model.objects.filter(short_code=slug).values('url_link')[0]['url_link']
+    return redirect(link)
+
 
 class LogoutInterfaceView(LogoutView):
-    template_name='home/home.html'
+    template_name = 'home/home.html'
 
 
 
 class SignupCreateView(CreateView):
-    form_class=UserCreationForm
-    success_url='/details'
+    form_class = UserCreationForm
+    success_url = '/details'
     template_name = "home/login.html"
 
 
 
-class URLDeleteView(LoginRequiredMixin,DeleteView):
+class URLDeleteView(LoginRequiredMixin, DeleteView):
     model = URL
     template_name = "home/confirm_delete.html"
     success_url = '/details'

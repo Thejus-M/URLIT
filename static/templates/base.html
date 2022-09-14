@@ -1,86 +1,46 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <title>HOME</title>
-    
+
     {% block styles %}
-        
+
     {% endblock styles %}
-        
+
 
 </head>
+
 <body>
-<nav>
-            <ul class="topnav">
-                <li class="logo">
-                        <div class="confetti-btn__btn cb1-btn cb1-btn--subtle js-confetti-btn__btn">
-
-                            <img src="{% static 'images/logo.png' %}" class="logo--nav" alt="Logo" width="185px">
-
-                        </div>
-                </li>
-                <!-- <li class="right ham-menu">
-                    <img src="{% static 'images/hamburger.png' %}" alt="icon" width="40px">
-                </li>
-                <li class="right close-ham-menu">
-                    <img src="{% static 'images/close-hamburger.png' %}" alt="icon" width="40px">
-                </li> -->
-
-{% if user.is_authenticated %}
-                <li class="right collapse">
-                    <a href="{% url 'logout' %}">
-                        Logout
-                    </a>
-                </li>
-                {% else %}
-                <li class="right collapse ">
-                    <a {% if request.path == '/signup/' %} class="active" {% endif %} href="{% url 'signup' %}">
-                        Register
-                    </a>
-                </li>
-                <li class="right collapse ">
-                    <a  {% if request.path == '/login/' %} class="active" {% endif %} href="{% url 'login' %}">
-                        Login
-                    </a>
-                </li>
-                {% endif %}
-                <li class="right collapse">
-                    <a {% if request.path == '/details/' %} class="active" {% endif %} href="{% url 'details' %}">
-                        All URL
-                    </a>
-                </li>
-                <li class="right collapse">
-                    <a {% if request.path == '/' %} class="active" {% endif %} href="{% url 'home' %}">
-                        Home
-                    </a>
-                </li>
-            </ul>
-        </nav>
     <nav>
-        <ul>
-            <li><a href="{% url 'home' %}">Home</a></li>
-            <li><a href="{% url 'details' %}">All URL</a></li>
-            <li><a href="">Details</a></li>
-            <li><a href="{% url 'login' %}">Login</a></li>
-            <li><a href="{% url 'logout' %}">LogOut</a></li>
-            <li><a href="{% url 'signup' %}">SignUp</a></li>
-            <li><a href="{% url 'shorten-url' %}">ADD link</a></li>
-
-        </ul>
+        <div class="topnav" id="myTopnav">
+            <img src="{% static 'images/logo.png' %}" class="logo--nav" alt="Logo" width="180px">
+            {% if user.is_authenticated %}
+                <a href="{% url 'logout' %}">Logout</a>
+            {% else %}
+                <a {% if request.path == '/signup/' %} class="active" {% endif %} href="{% url 'signup' %}">Register</a>
+                <a {% if request.path == '/login/' %} class="active" {% endif %} href="{% url 'login' %}">Login</a>
+            {% endif %}
+            <a {% if request.path == '/details/' %} class="active" {% endif %} href="{% url 'details' %}">All URL</a>
+            <a {% if request.path == '/' %} class="active" {% endif %} href="{% url 'home' %}">
+                Home
+            </a>
+            <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
+        </div>
     </nav>
-    
     {% block content %}
-    
+
     {% if user.is_authenticated %}
-        You are logged in
+    You are logged in
     {% endif %}
-        
+
     {% endblock content %}
-        
+    <script src="{% static 'js/script.js' %}"></script>
 </body>
+
 </html>
