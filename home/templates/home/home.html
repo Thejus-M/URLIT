@@ -21,7 +21,7 @@
 <div class="all_cards">
     {% for user in urls %}
     <div class="urls">
-        <a href="{{ user.url_link }}"><h2>{{ user.url_link }}</h2></a>
+        <a href="{{ user.url_link }}"><h2>{{ user.url_link |truncatechars:25 }}</h2></a>
         <h2><a href="{% url 'redirect' user.short_code %}">{{ user.short_code }}</a></h2>
             <a href="{% url 'delete' user.id %}"><button class="learn-more">DELETE</button></a>
     </div>
