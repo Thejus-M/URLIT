@@ -7,12 +7,21 @@
 {% endblock styles %}
 
 {% block content %}
-<div class="form">
-    <form method="post">{% csrf_token %}
-    
-        {{ form.as_p }}
-        <button value="submit">LOGIN</button>
-    </form>
+<div class="container">
+    <div class="form">
+        <form method="post">{% csrf_token %}
+        
+            {{ form.as_p }}
+            <button class="learn-more" value="submit">
+                
+                {% if request.path == '/signup/' %}
+                    Register
+                {% else %}
+                LOGIN
+                {% endif %}
+            </button>
+        </form>
+    </div>
 </div>
 
 {% endblock content %}
