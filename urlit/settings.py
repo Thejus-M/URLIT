@@ -12,10 +12,10 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 #from .secret import IP,SECRET_KEY
 import os
 import sys
-import dotenv
+# import dotenv
 from pathlib import Path
 
-dotenv.read_dotenv()
+# dotenv.read_dotenv()
 # def main():
 #     os.environ.seet
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
