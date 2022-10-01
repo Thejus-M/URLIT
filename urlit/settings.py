@@ -30,7 +30,7 @@ SECRET_KEY=os.environ.get('SECRET_KEY','D')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get('DEBUG')
 
-ALLOWED_HOSTS = ['urlit-production.up.railway.app']
+ALLOWED_HOSTS = ['urlit-production.up.railway.app','thejus-m.is-a.dev']
 
 
 
